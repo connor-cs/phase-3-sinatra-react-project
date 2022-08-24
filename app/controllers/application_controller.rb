@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
     taskname: params[:taskname],
     category_id: params[:category_id]
     )
+    task.to_json
   end
 
   delete "/todos/:id" do
