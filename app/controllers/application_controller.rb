@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/todos" do
     tasks = Task.all
-    tasks.to_json
+    tasks.to_json include: :category
   end
 
   post "/todos" do
