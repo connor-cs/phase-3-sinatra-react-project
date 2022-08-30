@@ -8,15 +8,16 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/todos" do
+    category = Category.find_by(:category == params[:category])
     task = Task.create(
     taskname: params[:taskname],
-    category_id: params[:category_id]
+    category_id: category.id
     )
-    task.to_json
+    task.to_json include: :category
   end
 
   delete "/todos/:id" do
-    task = task.find(params[:id])
+    task = Task.find(params[:id])
     task.destroy
     task.to_json
   end
