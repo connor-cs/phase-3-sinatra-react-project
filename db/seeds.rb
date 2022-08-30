@@ -6,6 +6,7 @@ Category.create(category_name: 'Fitness')
 Category.create(category_name: 'Personal')
 
 Task.create(taskname: "Finish code challenge", category_id: 1)
+Task.create(taskname: "Actually get decent at coding", category_id: 3)
 Task.create(taskname: "lift weights", category_id: 2)
 Task.create(taskname: "build practice react project", category_id: 3)
 Task.create(taskname: "meal prep", category_id: 3)
